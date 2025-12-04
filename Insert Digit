@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t; cin >> t;
+    while (t--) {
+        int n, d; string s; cin >> n >> d >> s;
+        string ans = "";
+        bool done = false;
+        for (char c : s) {
+            if (!done && d > c - '0') { ans += char('0'+d); done = true; }
+            ans += c;
+        }
+        if (!done) ans += char('0'+d);
+        cout << ans << "\n";
+    }
+}
