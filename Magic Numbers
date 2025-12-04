@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s;
+    cin >> s;
+
+    while (!s.empty()) {
+        if (s.size() >= 3 && s.substr(s.size() - 3) == "144") s.erase(s.size() - 3);
+        else if (s.size() >= 2 && s.substr(s.size() - 2) == "14") s.erase(s.size() - 2);
+        else if (s.back() == '1') s.pop_back();
+        else { cout << "NO\n"; return 0; }
+    }
+
+    cout << "YES\n";
+}
