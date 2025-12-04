@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+    int t;
+    cin >> t;
+    while(t--){
+        long long a,b;
+        cin >> a >> b;
+        if(a==b) cout << 0 << "\n";
+        else if(a<b) cout << 1 + ((b-a)%2==0 ? 1:0) << "\n";
+        else cout << 1 + ((a-b)%2==1 ? 1:0) << "\n";
+    }
+}
