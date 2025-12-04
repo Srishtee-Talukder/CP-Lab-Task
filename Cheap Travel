@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, m, a, b;
+    cin >> n >> m >> a >> b;
+    
+    int full_packages = (n / m) * b;
+    int remaining_rides = n % m;
+    int cost_remaining = min(remaining_rides * a, b);
+    
+    cout << full_packages + cost_remaining << "\n";
+}
