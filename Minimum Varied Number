@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t; cin >> t;
+    while(t--) {
+        int s; cin >> s;
+        vector<int> v;
+        for(int i=9;s && i>0;i--) {
+            int x = min(i,s);
+            v.push_back(x);
+            s -= x;
+        }
+        sort(v.begin(),v.end());
+        for(int x:v) cout << x;
+        cout << "\n";
+    }
+}
