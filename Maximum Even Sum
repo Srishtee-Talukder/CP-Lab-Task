@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t; 
+    cin >> t;
+    while (t--) {
+        long long a, b;
+        cin >> a >> b;
+        long long ans = -1;
+
+        long long k1 = b;
+        while (k1 % 2 == 0) k1 /= 2;
+        long long s1 = a * k1 + b / k1;
+        if (s1 % 2 == 0) ans = max(ans, s1);
+
+        if (b % 2 == 0) {
+            long long k2 = b / 2;
+            long long s2 = a * k2 + b / k2;
+            if (s2 % 2 == 0) ans = max(ans, s2);
+        }
+
+        cout << ans << "\n";
+    }
+    return 0;
+}
