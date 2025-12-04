@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t; cin >> t;
+    while(t--) {
+        long long n; cin >> n;
+        long long sq = (long long)sqrt(n);
+        long long cb = (long long)cbrt(n);
+        long long sixth = (long long)pow(n,1.0/6.0);
+        cout << sq + cb - sixth << "\n";
+    }
+}
