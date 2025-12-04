@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t; cin >> t;
+    while(t--) {
+        int n; string b;
+        cin >> n >> b;
+        set<char> s(b.begin(), b.end());
+        vector<char> r(s.begin(), s.end());
+        map<char,char> m;
+        int sz = r.size();
+        for(int i=0;i<sz;i++) m[r[i]]=r[sz-1-i];
+        for(char c:b) cout<<m[c];
+        cout<<"\n";
+    }
+}
