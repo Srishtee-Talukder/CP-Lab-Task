@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t; cin >> t;
+    while(t--) {
+        int n; string s;
+        cin >> n >> s;
+        bool ok = true;
+        set<char> seen;
+        char last = 0;
+        for(char c:s){
+            if(c!=last && seen.count(c)) { ok=false; break; }
+            seen.insert(c);
+            last=c;
+        }
+        cout << (ok?"YES":"NO") << "\n";
+    }
+}
