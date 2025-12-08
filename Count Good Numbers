@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const ll MOD = 1e9+7;
+
+ll modPow(ll a, ll b) {
+    ll res = 1;
+    while(b) {
+        if(b % 2) res = (res * a) % MOD;
+        a = (a * a) % MOD;
+        b /= 2;
+    }
+    return res;
+}
+
+int main() {
+    ll n;
+    cin >> n;
+    ll odd = (n + 1) / 2;
+    ll even = n / 2;
+    cout << (modPow(5, odd) * modPow(4, even)) % MOD;
+}
