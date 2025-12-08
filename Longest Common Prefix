@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+string LCP(vector<string> &v) {
+    if(v.size() == 0) return "";
+
+    string p = v[0];
+
+    for(int i = 1; i < v.size(); i++) {
+        int j = 0;
+        while(j < p.size() && j < v[i].size() && p[j] == v[i][j]) j++;
+        p = p.substr(0, j);
+        if(p == "") return "";
+    }
+    return p;
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    vector<string> v(n);
+    for(int i = 0; i < n; i++) cin >> v[i];
+
+    cout << LCP(v);
+}
